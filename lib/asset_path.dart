@@ -6,6 +6,7 @@ class AssetPath {
   static const cloth5 = "assets/cloth_5.jpg";
   static const cloth6 = "assets/cloth_6.jpg";
 
+  // https://github.com/jinhan38/commerce_20250828
 
   static const jacket = "assets/ic_jacket.png";
   static const jumper = "assets/ic_jumper.png";
