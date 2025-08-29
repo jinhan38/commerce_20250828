@@ -1,4 +1,5 @@
 import 'package:commerce_20250828/asset_path.dart';
+import 'package:commerce_20250828/screen/home/home_widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,7 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
+          SizedBox(height: 24),
+
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(imageList.length, (index) {
               return AnimatedContainer(
                 duration: Duration(milliseconds: 300),
@@ -53,6 +57,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             }),
+          ),
+
+          SizedBox(height: 24),
+
+          HomeWidgets.shortcut(
+            iconList: [
+              AssetPath.jacket,
+              AssetPath.jumper,
+              AssetPath.necklace,
+              AssetPath.bag,
+              AssetPath.cap,
+              AssetPath.skirt,
+              AssetPath.trousers,
+              AssetPath.shirt,
+            ],
           ),
         ],
       ),
