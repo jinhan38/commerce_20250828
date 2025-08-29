@@ -20,6 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<ProductModel> newProductList = [
     ProductModel(AssetPath.productJacketJean, "청자켓", 90000, 31, 4.3, false),
+    ProductModel(AssetPath.productManJacket, "남자 자켓", 160000, 2, 4.5, false),
+    ProductModel(AssetPath.productManStreet, "길거리 패션", 20000, 7, 4.5, false),
+    ProductModel(AssetPath.productManSuit, "수트", 96000, 8, 5.0, false),
+    ProductModel(AssetPath.productShoes, "신발", 70000, 101, 1.5, false),
   ];
 
   int currentIndex = 0;
@@ -82,6 +86,18 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 24),
           HomeWidgets.subTitle("신제품"),
           HomeWidgets.productHorizontal(newProductList),
+
+          /// 이벤트 항목 추가
+          /// subTitle 위젯 사용
+          /// Image.asset 위젯 사용
+          /// AssetPath.event 사용
+          SizedBox(height: 24),
+          HomeWidgets.subTitle("이벤트"),
+          SizedBox(
+            height: 200,
+            width: double.infinity,
+            child: Image.asset(AssetPath.event, fit: BoxFit.cover),
+          ),
         ],
       ),
     );
