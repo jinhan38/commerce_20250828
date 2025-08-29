@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HomeWidgets {
-
   static Widget shortcut({required List<String> iconList}) {
     return GridView.count(
       crossAxisCount: 4,
@@ -30,4 +29,25 @@ class HomeWidgets {
       }),
     );
   }
+
+  static Widget subTitle(String title) {
+    return Row(
+      children: [
+        SizedBox(width: 16),
+        Text(
+          title,
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
+  }
+
+  /// ListView.Builder 를 활용한 가로 스크롤 위젯 추가
+  /// 데이터 모델 추가 ProductModel
+  /// String image,
+  /// String name
+  /// int price
+  /// int reviewCount
+  /// double reviewRating,
+  /// bool cart
 }
