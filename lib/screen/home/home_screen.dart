@@ -16,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
     AssetPath.cloth4,
   ];
 
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -24,12 +26,33 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             height: 300,
             child: PageView(
+              onPageChanged: (value) {
+                currentIndex = value;
+                setState(() {});
+              },
               children: [
                 ...List.generate(imageList.length, (index) {
-                  return Image.asset(imageList[index],fit: BoxFit.cover);
+                  return Image.asset(imageList[index], fit: BoxFit.cover);
                 }),
               ],
             ),
+          ),
+
+          Row(
+            children: List.generate(imageList.length, (index) {
+              return AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                height: 10,
+                width: currentIndex == index ? 20 : 10,
+                margin: EdgeInsets.symmetric(horizontal: 5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: currentIndex == index
+                      ? Colors.grey
+                      : Colors.grey.shade300,
+                ),
+              );
+            }),
           ),
         ],
       ),
