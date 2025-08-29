@@ -43,6 +43,9 @@ class HomeWidgets {
     );
   }
 
+
+  /// Product 모델 5개로 만들어 주세요
+  /// ListView.builder 가로 padding 16 추가
   static Widget productHorizontal(List<ProductModel> dataList) {
     return SizedBox(
       height: 300,
