@@ -1,3 +1,4 @@
+import 'package:commerce_20250828/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class HomeWidgets {
@@ -42,12 +43,35 @@ class HomeWidgets {
     );
   }
 
-  /// ListView.Builder 를 활용한 가로 스크롤 위젯 추가
-  /// 데이터 모델 추가 ProductModel
-  /// String image,
-  /// String name
-  /// int price
-  /// int reviewCount
-  /// double reviewRating,
-  /// bool cart
+  static Widget productHorizontal(List<ProductModel> dataList) {
+    return SizedBox(
+      height: 300,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: dataList.length,
+        itemBuilder: (context, index) {
+          var productModel = dataList[index];
+          return SizedBox(
+            width: 150,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  productModel.image,
+                  width: double.infinity, height: 150,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(height: 4),
+                Text(
+                  productModel.name,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
 }

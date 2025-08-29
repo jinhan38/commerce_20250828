@@ -1,4 +1,5 @@
 import 'package:commerce_20250828/asset_path.dart';
+import 'package:commerce_20250828/model/product_model.dart';
 import 'package:commerce_20250828/screen/home/home_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
     AssetPath.cloth2,
     AssetPath.cloth3,
     AssetPath.cloth4,
+  ];
+
+  List<ProductModel> newProductList = [
+    ProductModel(AssetPath.productJacketJean, "청자켓", 90000, 31, 4.3, false),
   ];
 
   int currentIndex = 0;
@@ -76,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: 24),
           HomeWidgets.subTitle("신제품"),
-
+          HomeWidgets.productHorizontal(newProductList),
         ],
       ),
     );
